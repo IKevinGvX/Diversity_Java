@@ -5,7 +5,6 @@ import java.util.List;
 import com.Pl_Advanced_project.Diversity.Model.Empleados;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,13 +22,6 @@ import com.Pl_Advanced_project.Diversity.Service.EmployeesService;
 public class EmployeesController {
     @Autowired
     private EmployeesService empservice;
-
-    @GetMapping("/")
-    public String abrire(Model modelo) {
-        Empleados employees = new Empleados();
-        modelo.addAttribute("employees", employees);
-        return "index";
-    }
 
     @GetMapping("/listaremp")
     public List<Empleados> Getallemp() {

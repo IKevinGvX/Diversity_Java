@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulario de Registro - Empresa A1</title>
+        <link rel="stylesheet" href="../formularios.css">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@400;500&display=swap"
+            rel="stylesheet">
+    </head>
+    <body>
+        <style>
+/* Estilo tabla */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #444;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+table th {
+    background-color: #2c3e50;
+    font-weight: bold;
+}
+
+table tbody tr {
+    background-color: #34495e;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #2c3e50;
+}
+
+table tbody tr:hover {
+    background-color: #1abc9c;
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(26, 188, 156, 0.7);
+    cursor: pointer;
+}
+
+table td {
+    transition: 0.3s ease;
+}
+
+table td:hover {
+    background-color: #1abc9c;
+    color: white;
+}
+
+button {
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+    font-weight: bold;
+}
+
+.edit-btn {
+    background-color: #3498db;
+    color: white;
+    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.6);
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.8);
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.6);
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.8);
+}
+
+        </style><header>
+            <div class="logo">
+                <h1>Diversity</h1>
+            </div><br>
+            <nav>
+                <a href="#">Inicio</a>
+                <a href="#">Productos</a>
+                <a href="#">Servicios</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2>Formulario de Registro</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" id="nombre" required>
+                        <label for="nombre">Nombre Completo</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="correo" required>
+                        <label for="correo">Correo Electrónico</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="contrasena" required>
+                        <label for="contrasena">Contraseña</label>
+                    </div>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+        </div>
+
+        <button class="open-modal-btn" onclick="openModal()">Registrar</button>
+        <div class="wrapper electric-effect">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Juan Pérez</td>
+                        <td>juan@example.com</td>
+                        <td>
+                            <button class="edit-btn"
+                                onclick="editRecord(1)">Editar</button>
+                            <button class="delete-btn"
+                                onclick="deleteRecord(1)">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ana Gómez</td>
+                        <td>ana@example.com</td>
+                        <td>
+                            <button class="edit-btn"
+                                onclick="editRecord(2)">Editar</button>
+                            <button class="delete-btn"
+                                onclick="deleteRecord(2)">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Pedro López</td>
+                        <td>pedro@example.com</td>
+                        <td>
+                            <button class="edit-btn"
+                                onclick="editRecord(3)">Editar</button>
+                            <button class="delete-btn"
+                                onclick="deleteRecord(3)">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Empresa A1. Todos los derechos reservados.</p>
+        </footer>
+
+        <script src="../openmodel.js"></script>
+    </body>
+</html>
