@@ -1,7 +1,5 @@
 package com.Pl_Advanced_project.Diversity.Model;
 
-import java.sql.Blob;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,35 +11,19 @@ public class Clientes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cliente_id;
     private Integer usuario_id;
-    private String nombre, apellido, fecha;
+    private String nombre, apellido, fecha_nac;
     private Integer dni;
-    private Blob foto;
     private Integer ruc;
     private String correo, telefono, direccion;
 
-    public Clientes(Long cliente_id, Integer usuario_id, String nombre, String apellido, String fecha, Integer dni,
-            Blob foto, Integer ruc, String correo, String telefono, String direccion) {
+    public Clientes(Long cliente_id, Integer usuario_id, String nombre, String apellido, String fecha_nac, Integer dni,
+            Integer ruc, String correo, String telefono, String direccion) {
         this.cliente_id = cliente_id;
         this.usuario_id = usuario_id;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fecha = fecha;
+        this.fecha_nac = fecha_nac;
         this.dni = dni;
-        this.foto = foto;
-        this.ruc = ruc;
-        this.correo = correo;
-        this.telefono = telefono;
-        this.direccion = direccion;
-    }
-
-    public Clientes(Long cliente_id, String nombre, String apellido, String fecha, Integer dni, Blob foto, Integer ruc,
-            String correo, String telefono, String direccion) {
-        this.cliente_id = cliente_id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fecha = fecha;
-        this.dni = dni;
-        this.foto = foto;
         this.ruc = ruc;
         this.correo = correo;
         this.telefono = telefono;
@@ -83,12 +65,12 @@ public class Clientes {
         this.apellido = apellido;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getFecha_nac() {
+        return fecha_nac;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFecha_nac(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
 
     public Integer getDni() {
@@ -97,14 +79,6 @@ public class Clientes {
 
     public void setDni(Integer dni) {
         this.dni = dni;
-    }
-
-    public Blob getFoto() {
-        return foto;
-    }
-
-    public void setFoto(Blob foto) {
-        this.foto = foto;
     }
 
     public Integer getRuc() {

@@ -1,7 +1,5 @@
 package com.Pl_Advanced_project.Diversity.Model;
 
-import java.sql.Blob;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -10,20 +8,18 @@ public class Empleados {
     @Id
     private Long empleado_id;
     private Integer usuario_id;
-    private String rango, nombre, apellido, fecha;
+    private String rango, nombre, apellido, fecha_nac;
     private Integer dni;
-    private Blob foto;
     private String correo, telefono, direccion;
 
     // crud add
-    public Empleados(String rango, String nombre, String apellido, String fecha, Integer dni, Blob foto, String correo,
+    public Empleados(String rango, String nombre, String apellido, String fecha_nac, Integer dni, String correo,
             String telefono, String direccion) {
         this.rango = rango;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fecha = fecha;
+        this.fecha_nac = fecha_nac;
         this.dni = dni;
-        this.foto = foto;
         this.correo = correo;
         this.telefono = telefono;
         this.direccion = direccion;
@@ -31,16 +27,15 @@ public class Empleados {
 
     // Construct ALL
     public Empleados(Long empleado_id,
-            Integer usuario_id, String rango, String nombre, String apellido, String fecha,
-            Integer dni, Blob foto, String correo, String telefono, String direccion) {
+            Integer usuario_id, String rango, String nombre, String apellido, String fecha_nac,
+            Integer dni, String correo, String telefono, String direccion) {
         this.empleado_id = empleado_id;
         this.usuario_id = usuario_id;
         this.rango = rango;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fecha = fecha;
+        this.fecha_nac = fecha_nac;
         this.dni = dni;
-        this.foto = foto;
         this.correo = correo;
         this.telefono = telefono;
         this.direccion = direccion;
@@ -90,11 +85,11 @@ public class Empleados {
     }
 
     public String getFecha() {
-        return fecha;
+        return fecha_nac;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFecha(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
 
     public Integer getDni() {
@@ -103,14 +98,6 @@ public class Empleados {
 
     public void setDni(Integer dni) {
         this.dni = dni;
-    }
-
-    public Blob getFoto() {
-        return foto;
-    }
-
-    public void setFoto(Blob foto) {
-        this.foto = foto;
     }
 
     public String getCorreo() {

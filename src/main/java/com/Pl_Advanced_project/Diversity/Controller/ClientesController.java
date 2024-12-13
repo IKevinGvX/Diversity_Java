@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/clientes")
 public class ClientesController {
     @Autowired
     private ClienteService clienteservice;
@@ -43,4 +43,5 @@ public class ClientesController {
         clienteservice.deleteclient(id);
         return "Eliminado Correctamente : " + id;
     }
+
 }

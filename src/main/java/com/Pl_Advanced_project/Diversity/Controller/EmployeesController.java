@@ -18,7 +18,7 @@ import com.Pl_Advanced_project.Diversity.Service.EmployeesService;
 @Controller
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/empleados")
 public class EmployeesController {
     @Autowired
     private EmployeesService empservice;

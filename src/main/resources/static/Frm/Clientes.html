@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clientes - Diversity</title>
+        <link rel="stylesheet" href="../clientes.css">
+        <link rel="stylesheet"
+            href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+        <link rel="stylesheet"
+            href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Clientes - Diversity</h1>
+                <nav>
+                    <a href="Principal.html">Inicio</a>
+                    <a href="/productos">Otros</a>
+                    <a href="/servicios">Servicios</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="register-button-container">
+            <button id="openFormButton">Registrar Cliente</button>
+        </div>
+
+        <div id="formModal" class="modal-form">
+            <div class="modal-content-form">
+                <h2>Formulario de Registro</h2>
+                <form id="registerForm">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+
+                    <label for="fecha_nac">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha_nac" name="fecha_nac" required>
+
+                    <label for="dni">DNI:</label>
+                    <input type="number" id="dni" name="dni" required>
+
+                    <label for="ruc">RUC:</label>
+                    <input type="number" id="ruc" name="ruc" required>
+
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+
+                    <button type="submit">Enviar</button>
+                    <button type="button" id="closeFormButton">Atrás</button>
+                </form>
+            </div>
+        </div>
+        <div class="export-buttons">
+            <button onclick="exportToPDF()">Exportar a PDF</button>
+            <button onclick="exportToExcel()">Exportar a Excel</button>
+        </div>
+
+        <div class="table-container">
+            <table id="clientesTable"
+                class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Fecha</th>
+                        <th>DNI</th>
+                        <th>RUC</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="clientesBody">
+                </tbody>
+            </table>
+        </div>
+        <script src="Functions/productos.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script
+            src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+        <script
+            src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    </script>
+    </body>
+</html>
